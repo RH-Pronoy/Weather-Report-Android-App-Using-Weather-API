@@ -3,10 +3,6 @@
 
  Weather app that provides real-time weather updates for any city worldwide. Built using **Java, XML, and OpenWeather API**, it features a sleek and **interactive UI** with weather details like **temperature, wind speed, humidity, and "feels like" temperature.**  
 
-![Weather App UI](https://your-image-link.com) <!-- Add an image preview of your app -->
-
----
-
 ## 📌 Features
 
 ✅ **Beautiful Glassmorphic UI** with transparent weather card  
