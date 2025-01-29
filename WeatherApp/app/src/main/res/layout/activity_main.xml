@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="#F3BCF8DD">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_container_background"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <EditText
+                    android:id="@+id/searchInput"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="sans-serif"
+                    android:hint="Enter city name"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#0D1C42"
+                    android:textColorHint="#EE030E2E"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Search"
+                    android:elevation="4dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_search" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/searchLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:elevation="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Location"
+                android:textColor="#02177A"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cityText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:fontFamily="sans-serif"
+                android:text="Loading time..."
+                android:textColor="#BF830303"
+                android:textSize="14sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/weatherIconCard"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/dateTime"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="#F3BCF8DD"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="4dp">
+
+                <ImageView
+                    android:id="@+id/weatherIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/temperatureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weatherIconCard"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:elevation="2dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="--°C"
+                android:textColor="#034F8A"
+                android:textSize="48sp" />
+
+            <TextView
+                android:id="@+id/conditionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/temperatureText"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif"
+                android:text="Weather Condition"
+                android:textColor="#BF77085F"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/conditionText"
+                android:layout_marginTop="20dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/windLayout"
+                    layout="@layout/weather_detail_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent" />
+
+                <include
+                    android:id="@+id/humidityLayout"
+                    layout="@layout/weather_detail_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_background" />
+
+                <include
+                    android:id="@+id/feelsLikeLayout"
+                    layout="@layout/weather_detail_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:text="Created by Rafsan Hasan Pronoy"
+        android:textColor="#BF23021F"
+        android:fontFamily="sans-serif"
+        android:textSize="11sp"/>
+</RelativeLayout>
